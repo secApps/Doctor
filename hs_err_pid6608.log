@@ -1,0 +1,149 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 3200 bytes for AllocateHeap
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (memory/allocation.inline.hpp:61), pid=6608, tid=6620
+#
+# JRE version: Java(TM) SE Runtime Environment (7.0_67-b01) (build 1.7.0_67-b01)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (24.65-b04 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000000000236d800):  JavaThread "main" [_thread_in_vm, id=6620, stack(0x0000000002460000,0x0000000002560000)]
+
+Stack: [0x0000000002460000,0x0000000002560000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  0x0000000100000080
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0000000009917800 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=6728, stack(0x000000000afc0000,0x000000000b0c0000)]
+  0x0000000009916000 JavaThread "Attach Listener" daemon [_thread_blocked, id=6724, stack(0x000000000add0000,0x000000000aed0000)]
+  0x000000000990f000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=6720, stack(0x000000000aa00000,0x000000000ab00000)]
+  0x00000000098b6800 JavaThread "Finalizer" daemon [_thread_blocked, id=6684, stack(0x000000000ab00000,0x000000000ac00000)]
+  0x00000000098af000 JavaThread "Reference Handler" daemon [_thread_blocked, id=6676, stack(0x0000000005d30000,0x0000000005e30000)]
+=>0x000000000236d800 JavaThread "main" [_thread_in_vm, id=6620, stack(0x0000000002460000,0x0000000002560000)]
+
+Other Threads:
+  0x00000000098a7000 VMThread [stack: 0x000000000a830000,0x000000000a930000] [id=6660]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x000000000236be40] PerfDataManager_lock - owner thread: 0x000000000236d800
+
+Heap
+ PSYoungGen      total 28672K, used 1003K [0x00000000e0800000, 0x00000000e2780000, 0x0000000100000000)
+  eden space 25088K, 4% used [0x00000000e0800000,0x00000000e08faf38,0x00000000e2080000)
+  from space 3584K, 0% used [0x00000000e2400000,0x00000000e2400000,0x00000000e2780000)
+  to   space 3584K, 0% used [0x00000000e2080000,0x00000000e2080000,0x00000000e2400000)
+ ParOldGen       total 64512K, used 0K [0x00000000a1800000, 0x00000000a5700000, 0x00000000e0800000)
+  object space 64512K, 0% used [0x00000000a1800000,0x00000000a1800000,0x00000000a5700000)
+ PSPermGen       total 21504K, used 2076K [0x000000009c600000, 0x000000009db00000, 0x00000000a1800000)
+  object space 21504K, 9% used [0x000000009c600000,0x000000009c8070b8,0x000000009db00000)
+
+Card table byte_map: [0x0000000005560000,0x0000000005880000] byte_map_base: 0x000000000507d000
+
+Polling page: 0x0000000000130000
+
+Code Cache  [0x0000000002560000, 0x00000000027d0000, 0x0000000005560000)
+ total_blobs=157 nmethods=0 adapters=125 free_code_cache=48778Kb largest_free_block=49948800
+
+Compilation events (0 events):
+No events
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (1 events):
+Event: 1.086 Thread 0x000000000236d800 Threw 0x00000000e080b418 at C:\re\jdk7u67\1368\hotspot\src\share\vm\prims\jni.cpp:3991
+
+Events (10 events):
+Event: 1.297 loading class 0x00000000098a63e0 done
+Event: 1.298 loading class 0x00000000022af260
+Event: 1.298 loading class 0x00000000022af260 done
+Event: 1.298 loading class 0x00000000022bbb20
+Event: 1.299 loading class 0x00000000022bbb20 done
+Event: 1.301 loading class 0x0000000002279290
+Event: 1.301 loading class 0x0000000002279290 done
+Event: 1.303 Thread 0x000000000990f000 Thread added: 0x000000000990f000
+Event: 1.303 Thread 0x0000000009916000 Thread added: 0x0000000009916000
+Event: 1.303 Thread 0x0000000009917800 Thread added: 0x0000000009917800
+
+
+Dynamic libraries:
+0x000000013fbe0000 - 0x000000013fc13000 	C:\Program Files\Java\jre7\bin\java.exe
+0x0000000076e10000 - 0x0000000076fb9000 	C:\Windows\SYSTEM32\ntdll.dll
+0x0000000076730000 - 0x000000007684f000 	C:\Windows\system32\kernel32.dll
+0x000007fefd5d0000 - 0x000007fefd63c000 	C:\Windows\system32\KERNELBASE.dll
+0x000007fefde50000 - 0x000007fefdf2b000 	C:\Windows\system32\ADVAPI32.dll
+0x000007fefddb0000 - 0x000007fefde4f000 	C:\Windows\system32\msvcrt.dll
+0x000007fefdf30000 - 0x000007fefdf4f000 	C:\Windows\SYSTEM32\sechost.dll
+0x000007fefdb30000 - 0x000007fefdc5d000 	C:\Windows\system32\RPCRT4.dll
+0x0000000076d10000 - 0x0000000076e0a000 	C:\Windows\system32\USER32.dll
+0x000007fefdf50000 - 0x000007fefdfb7000 	C:\Windows\system32\GDI32.dll
+0x000007fefd640000 - 0x000007fefd64e000 	C:\Windows\system32\LPK.dll
+0x000007fefdc60000 - 0x000007fefdd29000 	C:\Windows\system32\USP10.dll
+0x000007fefa9b0000 - 0x000007fefaba4000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.17514_none_fa396087175ac9ac\COMCTL32.dll
+0x000007fefdd30000 - 0x000007fefdda1000 	C:\Windows\system32\SHLWAPI.dll
+0x000007fefd6f0000 - 0x000007fefd71e000 	C:\Windows\system32\IMM32.DLL
+0x000007fefe040000 - 0x000007fefe149000 	C:\Windows\system32\MSCTF.dll
+0x000000005acb0000 - 0x000000005ad82000 	C:\Program Files\Java\jre7\bin\msvcr100.dll
+0x000000005a4d0000 - 0x000000005aca2000 	C:\Program Files\Java\jre7\bin\server\jvm.dll
+0x000007fef5e60000 - 0x000007fef5e69000 	C:\Windows\system32\WSOCK32.dll
+0x000007fefe160000 - 0x000007fefe1ad000 	C:\Windows\system32\WS2_32.dll
+0x000007fefe150000 - 0x000007fefe158000 	C:\Windows\system32\NSI.dll
+0x000007fefbe60000 - 0x000007fefbe9b000 	C:\Windows\system32\WINMM.dll
+0x0000000076fd0000 - 0x0000000076fd7000 	C:\Windows\system32\PSAPI.DLL
+0x00000000742f0000 - 0x00000000742ff000 	C:\Program Files\Java\jre7\bin\verify.dll
+0x0000000066810000 - 0x0000000066838000 	C:\Program Files\Java\jre7\bin\java.dll
+0x000000006b780000 - 0x000000006b795000 	C:\Program Files\Java\jre7\bin\zip.dll
+0x000007fef8a10000 - 0x000007fef8b35000 	C:\Windows\system32\dbghelp.dll
+
+VM Arguments:
+java_command: <unknown>
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\Common Files\Microsoft Shared\Windows Live;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Common Files\Roxio Shared\DLLShared\;C:\Program Files (x86)\Common Files\Roxio Shared\12.0\DLLShared\;C:\Program Files\MATLAB\R2013a\runtime\win64;C:\Program Files\MATLAB\R2013a\bin
+USERNAME=mahdi
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 42 Stepping 7, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 , 64 bit Build 7601 Service Pack 1
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 42 stepping 7, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, ht, tsc, tscinvbit
+
+Memory: 4k page, physical 6189424k(1157408k free), swap 6187572k(11352k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (24.65-b04) for windows-amd64 JRE (1.7.0_67-b01), built on Jul 25 2014 08:55:00 by "java_re" with unknown MS VC++:1600
+
+time: Sat Jan 31 14:20:32 2015
+elapsed time: 1 seconds
+
